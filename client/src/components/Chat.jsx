@@ -24,6 +24,30 @@ const Chat = () => {
                     </IconButton>
                 </div>
             </div>
+
+            <div className="chat-body">
+                <p className="chat-message">
+                    <span className="chat-name">Sam</span>
+                    This is a message
+                    <span className="chat-timestamp">
+                        {new Date().toUTCString()}
+                    </span>
+                </p>
+                <p className="chat-message">
+                    <span className="chat-name">Sam</span>
+                    This is a message
+                    <span className="chat-timestamp">
+                        {new Date().toUTCString()}
+                    </span>
+                </p>
+                <p className="chat-message">
+                    <span className="chat-name">Sam</span>
+                    This is a message
+                    <span className="chat-timestamp">
+                        {new Date().toUTCString()}
+                    </span>
+                </p>
+            </div>
         </div>
     )
 }
