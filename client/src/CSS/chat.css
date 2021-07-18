@@ -1,5 +1,5 @@
-.sidebar{
+.chat{
     display: flex;
     flex-direction: column;
-    flex: 0.35;
+    flex: 0.65
 }
