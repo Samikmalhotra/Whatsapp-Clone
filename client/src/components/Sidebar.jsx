@@ -5,7 +5,7 @@ import { Avatar, IconButton } from '@material-ui/core'
 import ChatIcon from '@material-ui/icons/Chat'
 import MoreVerticon from '@material-ui/icons/MoreVert'
 import {SearchOutlined} from '@material-ui/icons'
-
+import SidebarChat from './SidebarChat.jsx'
 const Sidebar = () => {
     return (
         <div className="sidebar">

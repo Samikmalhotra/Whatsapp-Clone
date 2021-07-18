@@ -1,6 +1,6 @@
 import './App.css';
-import Chat from './components/Chat';
-import Sidebar from './components/Sidebar';
+import Chat from './components/Chat.jsx';
+import Sidebar from './components/Sidebar.jsx';
 
 function App() {
   return (
