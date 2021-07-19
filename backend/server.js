@@ -25,6 +25,15 @@ mongoose.connect(connection_url,{
 app.use(express.json())
 
 
+const db = mongoose.connection;
+db.once('open',()=>{
+    console.log('DB is connected')
+
+    const msgCollection = db.collection('messagecontent')
+    const changeStream = msgCollection.watch();
+})
+
+
 app.get('/',(req,res)=>{
     res.status(200).send('Hello World')
 })
