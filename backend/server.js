@@ -5,6 +5,13 @@ import Messages from './dbMessages.js'
 const app = express()
 const port = process.env.PORT || 9000
 
+const pusher = new Pusher({
+    appId: "1237823",
+    key: "fd211887e7f50f7c5810",
+    secret: "cc9f877c3558522ce993",
+    cluster: "ap2",
+    useTLS: true
+  });
 
 const connection_url = 'mongodb+srv://admin:ItwP3lVgKbHARPRM@cluster0.ki23j.mongodb.net/whatsapp?retryWrites=true&w=majority'
 mongoose.connect(connection_url,{
@@ -21,8 +28,14 @@ app.get('/',(req,res)=>{
     res.status(200).send('Hello World')
 })
 
-app.get('/messages/new', (req,res)=>{
-    res.send('to')
+app.get('/messages/sync', (req,res)=>{
+    Messages.find((err, data) => {
+        if(err){
+            res.status(500).send(err)
+        }else{
+            res.status(200).send(data)
+        }
+    })
 })
 
 app.post('/messages/new', (req,res)=>{
